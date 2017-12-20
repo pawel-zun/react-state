@@ -1,6 +1,3 @@
-// W poprzednim ćwiczeniu nie działały inputy, ponieważ nie było napisanej logiki,
-// która obsługiwałaby ich stan od strony komponentu Reacta ;)
-
 var Counter = React.createClass({
 
 	// Metody etapu montowania
@@ -70,40 +67,12 @@ var Counter = React.createClass({
 
 });
 
-var CounterBis = React.createClass({
-  getInitialState: function() {
-    return {
-      counter: 10
-    };
-  },
-
-  increment: function() {
-    this.setState({
-      counter: this.state.counter + 1
-    });
-  },
-
-  decrement: function() {
-  	this.setState({
-  		counter: this.state.counter -1
-  	});
-  },
- 
-  render: function() {
-    return React.createElement('div', {className: 'container'},
-	    React.createElement('button', {onClick: this.decrement, className: 'btn'}, 'Zmniejsz stan licznika'),
-	    React.createElement('span', {className: 'count'}, 'Licznik: ' + this.state.counter),
-	    React.createElement('button', {onClick: this.increment, className: 'btn'}, 'Zwiększ stan licznika')
-    );
-  }
-});
-
 var App = React.createClass({
   render: function() {
     return (
       React.createElement('div', {className: 'app'},
         React.createElement(Counter),
-        React.createElement(CounterBis)
+        React.createElement(Counter)
       )
     );
   }
